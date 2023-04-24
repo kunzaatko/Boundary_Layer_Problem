@@ -1,0 +1,64 @@
+\documentclass[x11names]{beamer}
+\usepackage{amsmath, amssymb, amsthm}
+\newtheorem*{remark}{Note}
+
+\usepackage{graphicx}
+\graphicspath{{../figures}}
+
+\usepackage{import}
+
+
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{physics}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{multicol}
+\usepackage{etoolbox}
+\usepackage{tikz}
+
+\usepackage[
+backend=biber,
+style=authoryear,
+sorting=ynt
+]{biblatex}
+\addbibresource{bibliography.bib}
+
+\usepackage{todonotes}
+\setuptodonotes{inline}
+
+\usepackage{xcolor-material}
+\definecolor{Orange}{cmyk}{0,0.5,1,0}
+
+\usefonttheme[onlymath]{serif}
+
+\title[Boundary-Layer Problem]{The Tale of a Boundary-Layer Problem}
+\author[]{Martin Kunz}
+\institute[FNSPE, CTU]{Faculty of Nuclear Sciences and Physical Engineering, Czech Technical University in Prague}
+\date{\today}
+
+\usetheme{Berlin}
+\usecolortheme{beaver}
+\setbeamertemplate{navigation symbols}{}
+
+\AtBeginSection[]{
+\ifnumcomp{\value{section}}{=}{1}{}
+    {
+        \tableofcontents[sections=\value{section}]
+        \pagebreak
+    }
+}
+
+\newcommand{\includepdftex}[1]{
+    \def\svgwidth{0.8\textwidth}
+    \import{../figures}{#1}
+}
+
+\makeatletter
+\setbeamertemplate{footline} {}
+\makeatother
+
+\newcommand{\R}{\mathbb{R}}
+
+\begin{document}
